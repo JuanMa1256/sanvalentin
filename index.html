@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .question {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no {
+            background-color: #808080;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="question">¿Quieres ser mi San Valentín? ❤️</h1>
+        <div class="image-container">
+            <img id="catImage" src="https://i.pinimg.com/originals/cb/76/31/cb763182fc5808a4a425f34ef5bfd366.gif" alt="Gatitos" width="250">
+        </div>
+        <div class="buttons">
+            <button class="yes" onclick="aceptar()">Sí</button>
+            <button class="no" onclick="cambiarImagen()">No</button>
+        </div>
+    </div>
+    <script>
+        let images = ["https://i.pinimg.com/originals/cb/76/31/cb763182fc5808a4a425f34ef5bfd366.gif", "https://i.pinimg.com/originals/0b/28/82/0b2882d62345d8e07bf9850310345e31.gif", "https://i.pinimg.com/originals/0b/46/f3/0b46f391edbcb5e260c105ed5e588f54.gif", "https://i.pinimg.com/originals/1e/7b/cd/1e7bcd2c629f77de3b40de535640dd1d.gif", "https://i.pinimg.com/originals/29/e7/7c/29e77c8968891ff09ff9c5ebbc1c0238.gif"];
+        let index = 0;
+
+        function aceptar() {
+            document.querySelector('.question').innerText = "¡Sabía que dirías que sí! 💖";
+            document.querySelector('.buttons').style.display = 'none';
+        }
+
+        function cambiarImagen() {
+            index = (index + 1) % images.length;
+            document.getElementById('catImage').src = images[index];
+        }
+    </script>
+</body>
+</html>
